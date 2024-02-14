@@ -19,6 +19,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '17'
+          distribution: 'adopt'
+          server-id: github
+          server-username: ${{ github.actor }}
+          server-password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Pull Maven dependencies
         run: mvn dependency:resolve
@@ -30,6 +34,7 @@ jobs:
         run: mvn test
 
       - name: Push to GitHub
+        if: success() && github.event_name == 'push'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
