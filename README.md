@@ -39,7 +39,7 @@ This project demonstrates how to:
 - **Zookeeper**: Manages and coordinates Kafka brokers.
 
 ### Kafka Cluster Example 🌐
-
+```
 +---------+
 |         |
 | Producer|        +-------------+
@@ -55,6 +55,7 @@ This project demonstrates how to:
                           +-------------+
                           |   Topic2   |
                           +-------------+
+```
 
 
 ### How Kafka Works 🛠️
