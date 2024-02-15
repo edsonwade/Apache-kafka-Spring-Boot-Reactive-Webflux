@@ -20,7 +20,7 @@ public class KafkaProducer {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    // Method to send a message to Kafka
+    // Method to send a message to KafkaJsonProducer
     public void sendMessage(String msg) {
         // Logging the message being sent
         log.info(String.format("sending message to my-topic:: %s", msg));

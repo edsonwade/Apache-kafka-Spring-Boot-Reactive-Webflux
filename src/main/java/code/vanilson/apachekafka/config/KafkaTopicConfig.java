@@ -10,13 +10,13 @@ import org.springframework.kafka.config.TopicBuilder;
 public class KafkaTopicConfig {
 
     /**
-     * Creates a new Kafka topic named "my-topic".
-     * And return NewTopic object representing the configured Kafka topic.
+     * Creates a new KafkaJsonProducer topic named "my-topic".
+     * And return NewTopic object representing the configured KafkaJsonProducer topic.
      */
     @Value("${my.topic}")
     public String myTopic;
     @Bean
-    public NewTopic myTopic() {
+    public NewTopic buildTopicMessage() {
         return TopicBuilder
                 .name(myTopic)
                 .build();

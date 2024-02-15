@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 public class KafkaConsumer {
 
     /**
-     * Kafka listener method to consume messages from the specified topic.
+     * KafkaJsonProducer listener method to consume messages from the specified topic.
      *
-     * @param msg The message consumed from Kafka
+     * @param msg The message consumed from KafkaJsonProducer
      */
-    @KafkaListener(topics = "#{ '${my.topic}' }",groupId = "myGroup")
+    @KafkaListener(topics = "#{ '${my.topic}' }", groupId = "myGroup")
     public void consumeMessage(String msg) {
         log.info(String.format("Consuming the message from my-topic %s", msg));
     }
