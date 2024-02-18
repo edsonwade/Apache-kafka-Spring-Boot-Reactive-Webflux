@@ -1,0 +1,33 @@
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: myGroup
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      #value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  #      properties:
+  #        spring.json.trusted.packages: '*'
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/kafka_consumer
+    username: postgres
+    password: Janina1.
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+#wikimedia:
+#  stream: wikimedia-stream
+
+server:
+  port: 8082
+
+
+
